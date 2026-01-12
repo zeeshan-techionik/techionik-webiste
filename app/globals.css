@@ -1,0 +1,280 @@
+@import "tailwindcss";
+@import "./styles/utilities.css";
+@import "./styles/button.css";
+@import "./styles/typography.css";
+
+/* =========================
+   DESIGN TOKENS (COLORS & FONTS)
+   ========================= */
+:root {
+  /* Brand Colors */
+  --color-primary: #F05323;
+  --color-primary-light: #2979FF;
+  --color-primary-dark: #F05323;
+
+  --color-secondary: #16A34A;
+  --color-secondary-light: #4ADE80;
+  --color-secondary-dark: #138D75;
+  
+
+  /* Neutrals / Background / Text */
+  --color-bg: #FFFFFF;           /* Page background light */
+  --color-surface: #F9FAFB;      /* Cards / surfaces light */
+  --color-text: #0000;         /* Main text */
+  --color-muted: #64748B;        /* Secondary text */
+
+  /* Font family */
+  --font-sans: 'Inter',  sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* Headings - responsive */
+  --font-h1: clamp(3rem, 5vw, 3rem); /* Mobile → Desktop */
+  --font-h2: clamp(1.75rem, 4vw, 2.25rem);
+  --font-h3: clamp(1.25rem, 4vw, 1.35rem);
+  --font-h4: clamp(1.25rem, 2.5vw, 1.5rem);
+  --font-h5: 1.125rem;
+  --font-h6: 1rem;
+
+  /* Body text */
+  --font-body-1: 1rem;
+  --font-body-2: 0.875rem;
+  --font-caption: 0.75rem;
+  --font-button: 0.875rem;
+
+  /* Shadows */
+  --shadow-brand: 0px 4px 20px rgba(0,0,0,0.25);
+
+  /* Radial gradient background */
+  --gradient-orange-radial: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(240, 83, 35, 0.6) 0%,
+    rgba(138, 48, 20, 0) 100%
+  );
+}
+
+/* =========================
+   DARK MODE TOKENS
+   ========================= */
+.dark {
+  --color-bg: #000000;
+  --color-surface: #26262B;
+  --color-text: #FFFFFF;
+  --color-muted: #A1A1AA;
+
+  --color-primary: #F05323;
+  --color-primary-light: #2979FF;
+  --color-primary-dark: #F05323;
+
+  --color-secondary: #16A34A;
+  --color-secondary-light: #4ADE80;
+  --color-secondary-dark: #16161A;
+}
+
+/* =========================
+   GLOBAL BASE STYLES
+   ========================= */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   TYPOGRAPHY (HEADINGS)
+   ========================= */
+h1 {
+  font-family: var(--font-sans);
+  font-size: var(--font-h1);
+  font-weight: 700;
+  line-height: 1.15;
+}
+h2 {
+  font-family: var(--font-sans);
+  font-size: var(--font-h2);
+  font-weight: 600;
+  line-height: 1.2;
+}
+h3 {
+  font-family: var(--font-sans);
+  font-size: var(--font-h3);
+  font-weight: 600;
+  line-height: 1.25;
+}
+h4 {
+  font-family: var(--font-sans);
+  font-size: var(--font-h4);
+  font-weight: 600;
+  line-height: 1.3;
+}
+h5 {
+  font-family: var(--font-sans);
+  font-size: var(--font-h5);
+  font-weight: 600;
+  line-height: 1.4;
+}
+h6 {
+  font-family: var(--font-sans);
+  font-size: var(--font-h6);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* =========================
+   BODY TEXT
+   ========================= */
+.body-1 { font-size: var(--font-body-1); line-height: 1.7; font-weight: 400; font-family: var(--font-sans); }
+.body-2 { font-size: var(--font-body-2); line-height: 1.6; font-weight: 400; font-family: var(--font-sans); }
+.caption { font-size: var(--font-caption); line-height: 1.4; font-weight: 400; font-family: var(--font-sans); }
+.button { font-size: var(--font-button);  font-weight: 600; font-family: var(--font-sans); }
+
+/* =========================
+   BACKGROUND UTILITIES
+   ========================= */
+.bg-primary { background-color: var(--color-primary);}
+.dark .bg-primary { background-color: var(--color-bg); }
+
+.bg-primary-light { background-color: var(--color-primary-light); }
+.bg-primary-dark { background-color: var(--color-primary-dark); }
+
+.bg-secondary { background-color: var(--color-secondary); }
+.dark .bg-secondary { background-color: var(--color-secondary-dark); }
+
+.bg-surface { background-color: var(--color-surface); }
+.dark .bg-surface { background-color: var(--color-surface); }
+
+.bg-gradient-orange { background: var(--gradient-orange-radial); }
+
+/* =========================
+   TEXT UTILITIES
+   ========================= */
+.text-primary { color: var(--color-primary); }
+.dark .text-primary { color: var(--color-primary-dark); }
+
+.text-secondary { color: var(--color-secondary); }
+.dark .text-secondary { color: var(--color-secondary-dark); }
+
+.text-muted { color: var(--color-muted); }
+.text-foreground { color: var(--color-text); }
+
+/* =========================
+   SHADOW UTILITIES
+   ========================= */
+.shadow-brand { box-shadow: var(--shadow-brand); }
+
+/* =========================
+   BUTTON GRADIENT & ANIMATIONS
+   ========================= */
+.btn-gradient {
+  @apply text-white font-semibold py-2 px-6 rounded transition-all duration-300;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+}
+.btn-gradient:hover {
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary-light));
+}
+
+/* SCROLL LEFT ANIMATION */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+/* SCROLL RIGHT ANIMATION */
+@keyframes scrollRight {
+  100% { transform: translateX(0); }
+  0% { transform: translateX(-50%); }
+}
+.animate-scrollRight {
+  animation: scrollRight 40s linear infinite;
+}
+
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tabs scrollbar styles */
+.tabs-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3f transparent;
+}
+.tabs-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+.tabs-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tabs-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #3a3a3f;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.dark .tabs-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #2e2e33;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Slow spin animation */
+.animate-spin-slow {
+  animation: spin-slow 25s linear infinite;
+}
+
+
+
+/* Vertical scrollbar for WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* thickness of scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary); /* thumb color (your brand color) */
+  border-radius: 4px;         /* rounded corners */
+  border: 2px solid #0e0d0d; /* optional padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d9461f; /* darker on hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;               /* thinner scrollbar */
+  scrollbar-color: #f05323 #111111;   /* thumb color / track color */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+nav{
+  
+  font-family: 400;
+  font-family: var(--font-sans);
+  line-height: 100%;
+
+}
+
+
