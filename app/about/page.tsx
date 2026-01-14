@@ -7,10 +7,10 @@ import TechServices from "@/views/home/TechServices";
 import IndustriesSection from "@/views/home/IndustriesSection";
 import TechStack from "@/views/home/TechStacks";
 import { servicesData } from "@/data/TechServices"; 
-// import Journey from "@/components/Jounery";
 import { teamSections } from "@/data/TeamData";
 import TeamCard from "@/components/TeamCards";
-// import { GiJourney } from "react-icons/gi";
+import Journey from "@/components/sections/about/Journey/Jounery";
+import WhomWeServe from "@/components/sections/about/Serve/page";
 
 
 export default function AboutPage() {
@@ -23,13 +23,15 @@ export default function AboutPage() {
             <section id="logos">
                 <PartnerLogos partners={partners} className="" />
             </section>
-            {/* <section id="journey">
-                <GiJourney />
-            </section> */}
+            <section id="journey">
+                <Journey />
+            </section>
             <section className="bg-black py-20 px-4 md:px-20 flex flex-col gap-20">
                 <TeamCard sections={teamSections} className="mx-auto" />
             </section>
-               
+            <section className="">
+                <WhomWeServe />
+            </section>
             <section id="tech-services" className="max-w-7xl mx-auto md:px-10 px-4 sm:px-6 lg:px-20 py-20">
                 <TechServices  servicesData={servicesData} />
             </section>
