@@ -18,4 +18,4 @@ export const AboutUsData: AboutHeroSlide[] = [
     ctaText: "Book a Call",
     ctaLink: "#contact",
   }
-];
+]; 
