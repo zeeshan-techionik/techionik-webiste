@@ -24,8 +24,8 @@ export const outsourcingModelsData: OutsourcingSlide = {
   slides: [
     {
       title: "Software Development Outsourcing",
-      image: "/images/outsourcingmedia/full.png",
-      hoverImage: "/images/outsourcingmedia/full.png",
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
       bulletPoints: [
         "Full-scale development handled with expertise. ",
         "Pain-free project management and delivery assurance.",
@@ -35,8 +35,8 @@ export const outsourcingModelsData: OutsourcingSlide = {
     },
     {
       title: "Dedicated Development Team",
-      image: "/images/outsourcingmedia/full.png",
-      hoverImage: "/images/outsourcingmedia/full.png",
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
       bulletPoints: [
         "Full-scale development handled with expertise. ",
         "Pain-free project management and delivery assurance.",
@@ -47,8 +47,8 @@ export const outsourcingModelsData: OutsourcingSlide = {
     },
     {
       title: "Quality Assurance & Testing",
-      image: "/images/outsourcingmedia/full.png",
-      hoverImage: "/images/outsourcingmedia/full.png",
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
 
       bulletPoints: [
         "Full-scale development handled with expertise. ",
@@ -59,8 +59,8 @@ export const outsourcingModelsData: OutsourcingSlide = {
     },
     {
       title: "UI/UX & Design Services",
-      image: "/images/outsourcingmedia/full.png",
-      hoverImage: "/images/outsourcingmedia/full.png",
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
 
       bulletPoints: [
         "Full-scale development handled with expertise. ",

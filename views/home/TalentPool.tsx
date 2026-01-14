@@ -1,115 +1,93 @@
 "use client";
-
+import React from "react";
 import Card from "@/components/TalentCard";
-import SliderDots from "@/components/Slider";
 import { useSlider } from "@/components/hooks/Slider";
 import Button from "@/components/Button";
+import { talentPoolData } from "../../data/TalentPollData";
+import { ArrowLeft, ArrowRight } from "lucide-react"; // Using for nav buttons
 
 const TalentPool = () => {
   const { emblaRef, emblaApi, index } = useSlider();
 
-  const teamData = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      designation: "UI/UX Designer",
-      title: "UI/UX Design Services",
-      image: "/images/home/ali-haider.webp",
-      stack: ["Figma", "Adobe XD", "Sketch", "InVision", "Marvel", "Axure RP"]
-    },
-    {
-      id: 2,
-      name: "Michael Chen",
-      designation: "Senior Full Stack Developer",
-      title: "Software Development Outsourcing",
-      image: "/images/home/ali-haider.webp",
-      stack: ["React", "Node.js", "TypeScript", "MongoDB", "AWS", "Docker"]
-    },
-    {
-      id: 3,
-      name: "David Rodriguez",
-      designation: "DevOps Engineer",
-      title: "Cloud Infrastructure Services",
-      image: "/images/home/ali-haider.webp",
-      stack: ["AWS", "Kubernetes", "Terraform", "Jenkins", "Ansible", "Linux"]
-    },
-    {
-      id: 4,
-      name: "Emma Wilson",
-      designation: "Mobile App Developer",
-      title: "Dedicated Development Team",
-      image: "/images/home/ali-haider.webp",
-      stack: ["React Native", "Flutter", "iOS", "Android", "Firebase", "GraphQL"]
-    },
-    {
-      id: 5,
-      name: "Emma Wilson",
-      designation: "Mobile App Developer",
-      title: "Dedicated Development Team",
-      image: "/images/home/ali-haider.webp",
-      stack: ["React Native", "Flutter", "iOS", "Android", "Firebase", "GraphQL"]
-    }
-  ];
-
   return (
-    <section >
-      <div >
-        {/* Header */}
-        <div className=" mx-auto mb-8 md:mb-12">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-8">
-            <div className="flex flex-col md:flex-1">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                Our Network of <span className="gradient-text">Talent</span> Pool
-              </h2>
-              <p className="text-gray-400 mt-2 max-w-xl text-sm sm:text-base">
-                At TECHIONIK, we have a diverse talent network comprising skilled developers, designers, project managers, and product managers, ensuring comprehensive expertise for your project's success.
-              </p>
-            </div>
+    <section className="bg-black py-20 px-4 sm:px-8 md:px-12 lg:px-20 overflow-hidden font-sans">
+      <div className="max-w-7xl mx-auto">
+        {/* --- Header Row 1: Title and Button in same row --- */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white">
+            {talentPoolData.title}{" "}
+            <span className="text-[#FF6B35] underline decoration-blue-500 underline-offset-8">
+              {talentPoolData.highlightedText}
+            </span>
+          </h2>
 
-            <div className="mt-4 md:mt-0">
-              <Button
-                text="Hire Developers Now"
-                icon="/icons/arrow-right.svg"
-                size="medium"
-                radius="full"
-
-                href="#"
-                variant="glass"
-                className="inline-flex w-full md:w-auto justify-center"
-              />
-
-            </div>
-          </div>
+          <Button
+            text={talentPoolData.ctaText}
+            icon="/icons/arrow-right.svg"
+            size="medium"
+            radius="full"
+            href={talentPoolData.ctaLink}
+            variant="gradient"
+            className="hidden md:inline-flex"
+          />
         </div>
 
-        {/* Slider */}
+        {/* --- Header Row 2: Description below Title --- */}
+        <div className="mb-12">
+          <p className="text-gray-400 max-w-2xl text-sm md:text-base leading-relaxed">
+            {talentPoolData.description}
+          </p>
+          {/* Mobile Button */}
+          <Button
+            text={talentPoolData.ctaText}
+            icon="/icons/arrow-right.svg"
+            size="medium"
+            radius="full"
+            href={talentPoolData.ctaLink}
+            variant="gradient"
+            className="inline-flex md:hidden mt-6"
+          />
+        </div>
+
+        {/* --- Slider Section --- */}
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6 md:gap-8">
-            {teamData.map((slide, i) => (
+          <div className="flex gap-6">
+            {talentPoolData.team.map((member, i) => (
               <div
                 key={i}
-                className="flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.3333%] lg:flex-[0_0_25%]"
+                // Setting card slide width to maintain alignment
+                className="flex-[0_0_100%] sm:flex-[0_0_45%] lg:flex-[0_0_31%]"
               >
                 <Card
-                  name={slide.name}
-                  designation={slide.designation}
-                  title={slide.title}
-                  image={slide.image}
-                  active={index === i}
-                  stack={slide.stack}
+                  title={member.name}
+                  name={member.name}
+                  designation={member.designation}
+                  image={member.image}
+                  stack={member.stack}
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Dots */}
-        <div className="mt-6">
-          <SliderDots
-            count={teamData.length}
-            activeIndex={index}
-            onDotClick={(i) => emblaApi?.scrollTo(i)}
-          />
+        {/* --- Bottom Navigation: Dots and Arrows --- */}
+        {/* --- Bottom Navigation: Arrows Only --- */}
+        <div className="flex justify-end mt-12">
+          <div className="flex gap-4">
+            <button
+              onClick={() => emblaApi?.scrollPrev()}
+              className="p-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition"
+            >
+              <ArrowLeft size={20} />
+            </button>
+
+            <button
+              onClick={() => emblaApi?.scrollNext()}
+              className="p-3 rounded-full border border-[#FF6B35] text-[#FF6B35] hover:bg-[#FF6B35]/10 transition"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

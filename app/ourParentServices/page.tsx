@@ -1,14 +1,17 @@
 import OutSourceModels from "@/components/OutSourceModel";
 import TechServices from "@/views/home/TechServices";
-import AboutSection from "@/components/sections/home/hero/AboutSection";
+// import AboutSection from "@/components/sections/home/hero/AboutSection";
+import ServicesHero from "@/components/sections/home/hero/ServiceHero";
+import TalentPool from "@/views/home/TalentPool";
+import CTASection from "@/components/CTAComponent";
 import { servicesData } from "@/data/TechServices";
-import { AboutUsData } from "@/data/AboutSectionData";
+import { ServiceHeroData } from "@/data/ServiceHeroData";
 
 const OurParentServices = () => {
   return (
     <main className="overflow-x-hidden scroll-smooth">
-      <section id="about">
-        <AboutSection slides={AboutUsData} />
+      <section id="hero">
+        <ServicesHero slides={ServiceHeroData} />
       </section>
 
       <section id="outsourcingmodel">
@@ -20,9 +23,12 @@ const OurParentServices = () => {
       >
         <TechServices servicesData={servicesData} />
       </section>
-      {/* <section id="footer">
-        <FooterSection />
-      </section> */}
+      <section id="CTASection">
+        <CTASection />
+      </section>
+      <section id="talent-pool">
+        <TalentPool />
+      </section>
     </main>
   );
 };

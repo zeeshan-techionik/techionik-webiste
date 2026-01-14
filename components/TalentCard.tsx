@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import Button from "@/components/Button"; // Import your existing Button component
 
 type CardProps = {
   title: string;
@@ -10,50 +10,62 @@ type CardProps = {
   stack?: string[];
 };
 
-const Card = ({ title, image, active, name, designation, stack }: CardProps) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+const Card = ({ image, active, name, designation, stack }: CardProps) => {
   return (
     <div
       className={`
-        relative rounded-2xl p-4
-        bg-gradient-to-b from-[#1A1A1A] to-[#0E0E0E]
-        transition-all duration-300 max-h-[571px] max-w-[400px] mx-auto
-        ${active ? "ring-1 ring-orange-500" : "ring-1 ring-white/10"}
+        relative rounded-[32px] p-8
+        bg-[#111113] border
+        transition-all duration-300 min-h-[571px] w-[400px] mx-auto
+        flex flex-col items-center
+        ${active ? "border-orange-500" : "border-white/5"}
       `}
     >
-      {/* Image */}
-      <div className="rounded-xl overflow-hidden">
+      {/* Rectangular Image Container - Matches 330x219 ratio */}
+      <div className="w-full max-w-[330px] h-[219px] rounded-2xl overflow-hidden mb-6">
         <Image
           src={image}
-          alt={title}
-          width={500}
-          height={280}
+          alt={name || "Talent"}
+          width={330}
+          height={219}
           loading="lazy"
-          className="w-full h-[220px] object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Content */}
-      <div className="mt-4 space-y-2 text-center">
-        <h3 className="align-center">{name || title}</h3>
-        {designation && <p className="text-gray-400 text-sm color-primary">{designation}</p>}
+      {/* Name and Designation */}
+      <div className="text-center mb-6">
+        <h3 className="text-white text-3xl font-bold tracking-tight leading-tight">
+          {name?.split(" ")[0]}{" "}
+          <span className="text-gray-400 font-semibold">
+            {name?.split(" ")[1]}
+          </span>
+        </h3>
+        <p className="text-[#FF6B35] text-lg font-medium mt-2">{designation}</p>
+      </div>
 
-        {/* Stack Buttons */}
-     <div className="flex flex-wrap gap-4 mt-4 text text-center justify-center">
-  {stack?.map((tech, index) => (
-    <div
-      key={index}
-      className="flex items-center justify-center bg-surface w-24 h-10 rounded-[28px] text-sm font-medium text-white"
-      style={{
-        transform: "rotate(0deg)",
-        opacity: 1,
-      }}
-    >
-      {tech}
-    </div>
-  ))}
-</div>
+      {/* Skill Stack Tags */}
+      <div className="flex flex-wrap gap-2 justify-center mb-8 px-2">
+        {stack?.map((tech, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-center bg-[#1C1C1E] px-4 py-2 rounded-full text-xs font-medium text-gray-300 border border-white/5"
+          >
+            {tech}
+          </div>
+        ))}
+      </div>
+
+      {/* Hire Now Button - Aligned to bottom */}
+      <div className="mt-auto">
+        <Button
+          text="Hire Now"
+          icon="/icons/arrow-right.svg"
+          size="medium"
+          radius="full"
+          variant="gradient"
+          className="px-6 inline-flex items-center gap-2"
+        />
       </div>
     </div>
   );

@@ -62,33 +62,38 @@ const OutsourcingModels = () => {
                 }
               `}
               >
-                <div className="relative w-full h-[220px] group">
-                  {/* Normal Image */}
+                <div className="relative w-full h-[220px] group overflow-hidden">
+                  {/* Default Image */}
                   <Image
                     src={slide.image}
                     alt={slide.title}
                     fill
+                    sizes="50vw"
                     className="
+      absolute inset-0
+      z-10
       object-contain
-      transition-opacity duration-500
+      transition-opacity duration-500 ease-in-out
       opacity-100
       group-hover:opacity-0
     "
-                    sizes="50vw"
                   />
 
                   {/* Hover Image */}
                   <Image
                     src={slide.hoverImage}
-                    alt={`${slide.title} hover`}
+                    alt={slide.title}
+                    aria-hidden
                     fill
+                    sizes="50vw"
                     className="
+      absolute inset-0
+      z-20
       object-contain
-      transition-opacity duration-500
+      transition-opacity duration-500 ease-in-out
       opacity-0
       group-hover:opacity-100
     "
-                    sizes="50vw"
                   />
                 </div>
               </div>
