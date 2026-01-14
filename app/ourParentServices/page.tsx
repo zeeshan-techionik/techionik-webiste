@@ -1,16 +1,16 @@
-import { heroHomeData } from "@/data/HeroSectionData";
-import HeroSection from "@/components/sections/home/hero/HeroSection";
-import FooterSection from "@/components/sections/home/footer-content/FooterContent";
 import OutSourceModels from "@/components/OutSourceModel";
 import TechServices from "@/views/home/TechServices";
+import AboutSection from "@/components/sections/home/hero/AboutSection";
 import { servicesData } from "@/data/TechServices";
+import { AboutUsData } from "@/data/AboutSectionData";
 
 const OurParentServices = () => {
   return (
     <main className="overflow-x-hidden scroll-smooth">
-      <section id="hero">
-        <HeroSection slides={heroHomeData} />
+      <section id="about">
+        <AboutSection slides={AboutUsData} />
       </section>
+
       <section id="outsourcingmodel">
         <OutSourceModels />
       </section>

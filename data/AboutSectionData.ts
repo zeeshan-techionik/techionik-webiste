@@ -8,7 +8,6 @@ export interface AboutHeroSlide {
 }
 
 export const AboutUsData: AboutHeroSlide[] = [
-  
   {
     title: "Software Development",
     subtitle: "& Global IT Outsourcing Company",
@@ -17,5 +16,5 @@ export const AboutUsData: AboutHeroSlide[] = [
     image: "/images/about/about-us.png",
     ctaText: "Book a Call",
     ctaLink: "#contact",
-  }
-]; 
+  },
+];
