@@ -11,6 +11,7 @@ import { teamSections } from "@/data/TeamData";
 import TeamCard from "@/components/TeamCards";
 import Journey from "@/components/sections/about/Journey/Jounery";
 import WhomWeServe from "@/components/sections/about/Serve/page";
+import Culture from "@/components/sections/about/Culture/page";
 
 
 export default function AboutPage() {
@@ -31,6 +32,9 @@ export default function AboutPage() {
             </section>
             <section className="">
                 <WhomWeServe />
+            </section>
+            <section className="">
+                <Culture />
             </section>
             <section id="tech-services" className="max-w-7xl mx-auto md:px-10 px-4 sm:px-6 lg:px-20 py-20">
                 <TechServices  servicesData={servicesData} />
