@@ -50,6 +50,14 @@
     rgba(240, 83, 35, 0.6) 0%,
     rgba(138, 48, 20, 0) 100%
   );
+
+  /* Linear gradient background */
+  --linear-primary: linear-gradient(
+    90deg,
+    rgba(240, 83, 35, 1) 0%,
+    rgba(153, 153, 153, 1) 100%
+  );
+
 }
 
 /* =========================
@@ -158,6 +166,16 @@ h6 {
 
 .text-muted { color: var(--color-muted); }
 .text-foreground { color: var(--color-text); }
+
+/* Linear Gradient for Number*/
+@layer utilities {
+  .text-linear-primary {
+    background: linear-gradient(90deg, #F05323 0%, #999999 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
 
 /* =========================
    SHADOW UTILITIES

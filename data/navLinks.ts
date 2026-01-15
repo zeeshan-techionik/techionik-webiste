@@ -7,7 +7,7 @@
 
 export const navLinks: NavLink[] = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/" },
+  { name: "About", href: "/about" },
   {
     name: "Services",
     href: "/",

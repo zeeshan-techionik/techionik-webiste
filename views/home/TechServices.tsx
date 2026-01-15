@@ -14,7 +14,7 @@ const TechServices: React.FC<any> = ({servicesData}) => {
   return (
     <section className="mx-auto  bg-black/50">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-8 md:mb-12 gap-4 md:gap-0">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-8 md:mb-12 gap-4 md:gap-23">
         <div className="max-w-lg">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             {servicesData?.gradiantText} <span className="gradient-text">{servicesData?.afterGradientText}</span>
