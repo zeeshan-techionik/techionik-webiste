@@ -22,6 +22,7 @@
   --color-surface: #F9FAFB;      /* Cards / surfaces light */
   --color-text: #0000;         /* Main text */
   --color-muted: #64748B;        /* Secondary text */
+  --color-border: #CACACA;      /* Borders and dividers */
 
   /* Font family */
   --font-sans: 'Inter',  sans-serif;
@@ -51,12 +52,8 @@
     rgba(138, 48, 20, 0) 100%
   );
 
-  /* Linear gradient background */
-  --linear-primary: linear-gradient(
-    90deg,
-    rgba(240, 83, 35, 1) 0%,
-    rgba(153, 153, 153, 1) 100%
-  );
+  /* Linear gradient icons/border */
+  --gradient-linear-primary: linear-gradient(90deg, var(--color-primary) 0%, var(--color-border) 100%);
 
 }
 
@@ -167,16 +164,6 @@ h6 {
 .text-muted { color: var(--color-muted); }
 .text-foreground { color: var(--color-text); }
 
-/* Linear Gradient for Number*/
-@layer utilities {
-  .text-linear-primary {
-    background: linear-gradient(90deg, #F05323 0%, #999999 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-}
-
 /* =========================
    SHADOW UTILITIES
    ========================= */
@@ -191,6 +178,34 @@ h6 {
 }
 .btn-gradient:hover {
   background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary-light));
+}
+
+/* ==========================
+    BORDER GRADIENT UTILITIES 
+   =========================
+*/
+
+/* Border gradient for buttons */
+.border-gradient {
+  position: relative;
+  background: 
+    linear-gradient(#000000, #000000) padding-box,
+    var(--gradient-linear-primary) border-box;
+  border: 1.5px solid transparent;
+  border-radius: 9999px;
+}
+
+/* For icon gradient fill */
+.icon-gradient {
+  background: var(--gradient-linear-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* For SVG icons with gradient */
+.svg-gradient {
+  background: var(--gradient-linear-primary);
 }
 
 /* SCROLL LEFT ANIMATION */

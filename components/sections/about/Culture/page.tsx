@@ -6,7 +6,7 @@ import CultureImageText from "./CultureImageText";
 const Culture = () => {
     return (
         <div className="main max-w-8xl mx-auto md:px-10 px-4 sm:px-6 lg:px-20 py-20 space-y-7">
-            <h2 className="head2">
+            <h2 className="">
                 {cultureData.title}
             </h2>
             <div className="content grid items-center

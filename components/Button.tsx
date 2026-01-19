@@ -20,19 +20,28 @@ const variantClasses = {
     "bg-gradient-to-r from-[#F05323] to-[#8A3014]  text-white hover:scale-105  transition-transform duration-300 px-6 py-2 rounded-4xl font-semibold",
   glass: "bg-white/30 backdrop-blur-md border border-white/40 rounded-4xl  text-white font-semibold hover:bg-white/40   hover:scale-105 transition-transform duration-300",
 };
+
+const iconRotateClasses = {
+  0: "rotate-0",
+  45: "rotate-[-45deg]",
+  60: "rotate-[-60deg]",
+  90: "rotate-[-90deg]"
+};
 interface ButtonProps {
-  text: string;
+  text?: string; // make it optional for some styles
   href?: string;
   icon?: string;
   hoverIcon?: string;
   showIcon?: boolean;
   size?: "small" | "medium" | "large";
   radius?: "md" | "lg" | "full";
-  variant?: "gradient" | "glass";
+  variant?: "gradient" | "glass";  // default variant is gradient
   className?: string;
+  iconRotate?: 0 | 45 | 60 | 90 | -45 | -60 | -90; /* use rotation for arrow forward icon */
   onClick?: () => void;
 }
 
+// eslint-disable-next-line react/display-name
 const Button: React.FC<ButtonProps> = React.memo(
   ({
     text,
@@ -44,6 +53,7 @@ const Button: React.FC<ButtonProps> = React.memo(
     radius = "full",
     variant = "gradient",
     className = "",
+    iconRotate = 0,   //default no rotation
     onClick,
   }) => {
     const buttonClasses = `
@@ -62,8 +72,14 @@ const Button: React.FC<ButtonProps> = React.memo(
         {showIcon && icon && (
           <span className="relative ">
             {/* Default Icon */}
-           <span className="">
-            <Image src={icon} alt="icon" width={42} height={34} />
+            {/* Icon rotation added */}
+          <span>
+            <Image 
+              src={icon} 
+              alt="icon" 
+              width={42} 
+              height={34}
+              className={`transition-transform duration-300 ${iconRotateClasses[iconRotate ?? 0]}`} />
           </span>
 
  
