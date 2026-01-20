@@ -38,8 +38,8 @@ const NavMenu: React.FC<NavMenuProps> = ({ navLinks }) => {
 
               {/* Submenu */}
               <div className="absolute left-0 mt-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
-                <div className="gradient-border p-[2px] rounded-md">
-                  <div className="submenu-content bg-black rounded-sm overflow-hidden min-w-[200px] flex flex-col">
+                <div className="gradient-border p-0.5 rounded-md">
+                  <div className="submenu-content bg-black rounded-sm overflow-hidden min-w-50 flex flex-col">
                     {link.children.map((child:any, i:any) => (
                       <Link
                         key={child.name}
