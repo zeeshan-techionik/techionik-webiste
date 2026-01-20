@@ -12,7 +12,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ navLinks }) => {
     <>
       {/* Desktop Menu */}
       <nav className="hidden md:flex gap-7 items-center justify-center flex-1 relative font-inter text-[14px]-700 font-normal">
-        {navLinks.map((link:any) =>
+        {navLinks.map((link: NavLink) =>
           link.type === "button" ? (
             <Button
               key={link.name}
@@ -40,12 +40,12 @@ const NavMenu: React.FC<NavMenuProps> = ({ navLinks }) => {
               <div className="absolute left-0 mt-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
                 <div className="gradient-border p-0.5 rounded-md">
                   <div className="submenu-content bg-black rounded-sm overflow-hidden min-w-50 flex flex-col">
-                    {link.children.map((child:any, i:any) => (
+                    {link.children.map((child: NavLink, i: number) => (
                       <Link
                         key={child.name}
                         href={child.href!}
-                        className={`block px-4 py-2 text-white hover:text-black hover:bg-white transition-colors ${
-                          i !== link.children.length - 1
+                        className={`block px-4 py-2 text-white hover:text-black hover:bg-white transition-colors 
+                          ${ i !== link.children.length - 1
                             ? "border-b border-gray-700"
                             : ""
                         }`}
