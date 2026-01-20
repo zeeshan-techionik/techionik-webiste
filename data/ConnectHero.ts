@@ -20,7 +20,6 @@ export interface ContactHeroData {
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { MdOutlinePayments } from "react-icons/md";
 
-
 export const contactHeroContent = {
   title: "Ready to Elevate Your Business?",
   highlight: "Elevate",
