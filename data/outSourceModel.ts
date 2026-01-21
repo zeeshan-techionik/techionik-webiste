@@ -10,42 +10,64 @@ export interface OutsourcingSlide {
 export interface slides {
   title: string;
   image: string;
-  bulletPoints:string[]
-
+  hoverImage: string;
+  bulletPoints: string[];
 }
 
-export const outsourcingModelsData: OutsourcingSlide = {   
+export const outsourcingModelsData: OutsourcingSlide = {
   title: "Ours",
   MiddleTitle: "Outsourcing",
   lastTitle: "Models",
 
- description:"Our outsourcing models are designed to optimize your operational success and project outcomes.",
+  description:
+    "Our outsourcing models are designed to optimize your operational success and project outcomes.",
   slides: [
     {
       title: "Software Development Outsourcing",
-      image: "/images/home/Software-Development.webp",
-      bulletPoints:[ "Full-scale development handled with expertise. ","Pain-free project management and delivery assurance."]
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
+      bulletPoints: [
+        "Full-scale development handled with expertise. ",
+        "Pain-free project management and delivery assurance.",
+        "Full-scale development handled with expertise. ",
+        "Pain-free project management and delivery assurance.",
+      ],
+    },
+    {
+      title: "Dedicated Development Team",
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
+      bulletPoints: [
+        "Full-scale development handled with expertise. ",
+        "Pain-free project management and delivery assurance.",
+        "Full-scale development handled with expertise. ",
 
+        "Pain-free project management and delivery assurance.",
+      ],
+    },
+    {
+      title: "Quality Assurance & Testing",
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
 
+      bulletPoints: [
+        "Full-scale development handled with expertise. ",
+        "Pain-free project management and delivery assurance.",
+        "Full-scale development handled with expertise. ",
+        "Pain-free project management and delivery assurance.",
+      ],
+    },
+    {
+      title: "UI/UX & Design Services",
+      image: "/images/ParentServices/outsourcingmedia/full.png",
+      hoverImage: "/images/ParentServices/outsourcingmedia/colorfull.png",
 
-  },
-  {
-    title: "Dedicated Development Team",
-    image: "/images/home/Dedicated-Team.webp",
-         bulletPoints:[ "Full-scale development handled with expertise. ","Pain-free project management and delivery assurance."]
-  },
-  {
-    title: "Quality Assurance & Testing",
-      image: "/images/home/Dedicated-Team.webp",
-           bulletPoints:[ "Full-scale development handled with expertise. ","Pain-free project management and delivery assurance."]
-  },
-  {
-    title: "UI/UX & Design Services",
-      image: "/images/home/Dedicated-Team.webp",
-           bulletPoints:[ "Full-scale development handled with expertise. ","Pain-free project management and delivery assurance."]
-  },
-]
-}
-
-
-
+      bulletPoints: [
+        "Full-scale development handled with expertise. ",
+        "Pain-free project management and delivery assurance.",
+        "Full-scale development handled with expertise. ",
+        "Pain-free project management and delivery assurance.",
+      ],
+    },
+  ],
+};
