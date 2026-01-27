@@ -8,25 +8,24 @@
    ========================= */
 :root {
   /* Brand Colors */
-  --color-primary: #F05323;
-  --color-primary-light: #2979FF;
-  --color-primary-dark: #F05323;
+  --color-primary: #f05323;
+  --color-primary-light: #2979ff;
+  --color-primary-dark: #f05323;
 
-  --color-secondary: #16A34A;
-  --color-secondary-light: #4ADE80;
-  --color-secondary-dark: #138D75;
-  
+  --color-secondary: #16a34a;
+  --color-secondary-light: #4ade80;
+  --color-secondary-dark: #138d75;
 
   /* Neutrals / Background / Text */
-  --color-bg: #FFFFFF;           /* Page background light */
-  --color-surface: #F9FAFB;      /* Cards / surfaces light */
-  --color-text: #0000;         /* Main text */
-  --color-muted: #64748B;        /* Secondary text */
-  --color-border: #CACACA;      /* Borders and dividers */
+  --color-bg: #ffffff; /* Page background light */
+  --color-surface: #f9fafb; /* Cards / surfaces light */
+  --color-text: #0000; /* Main text */
+  --color-muted: #64748b; /* Secondary text */
+  --color-border: #cacaca; /* Borders and dividers */
 
   /* Font family */
-  --font-sans: 'Inter',  sans-serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
 
   /* Headings - responsive */
   --font-h1: clamp(3rem, 5vw, 3rem); /* Mobile → Desktop */
@@ -43,7 +42,7 @@
   --font-button: 0.875rem;
 
   /* Shadows */
-  --shadow-brand: 0px 4px 20px rgba(0,0,0,0.25);
+  --shadow-brand: 0px 4px 20px rgba(0, 0, 0, 0.25);
 
   /* Radial gradient background */
   --gradient-orange-radial: radial-gradient(
@@ -53,8 +52,11 @@
   );
 
   /* Linear gradient icons/border */
-  --gradient-linear-primary: linear-gradient(90deg, var(--color-primary) 0%, var(--color-border) 100%);
-
+  --gradient-linear-primary: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-border) 100%
+  );
 }
 
 /* =========================
@@ -62,17 +64,17 @@
    ========================= */
 .dark {
   --color-bg: #000000;
-  --color-surface: #26262B;
-  --color-text: #FFFFFF;
-  --color-muted: #A1A1AA;
+  --color-surface: #26262b;
+  --color-text: #ffffff;
+  --color-muted: #a1a1aa;
 
-  --color-primary: #F05323;
-  --color-primary-light: #2979FF;
-  --color-primary-dark: #F05323;
+  --color-primary: #f05323;
+  --color-primary-light: #2979ff;
+  --color-primary-dark: #f05323;
 
-  --color-secondary: #16A34A;
-  --color-secondary-light: #4ADE80;
-  --color-secondary-dark: #16161A;
+  --color-secondary: #16a34a;
+  --color-secondary-light: #4ade80;
+  --color-secondary-dark: #16161a;
 }
 
 /* =========================
@@ -130,54 +132,113 @@ h6 {
 /* =========================
    BODY TEXT
    ========================= */
-.body-1 { font-size: var(--font-body-1); line-height: 1.7; font-weight: 400; font-family: var(--font-sans); }
-.body-2 { font-size: var(--font-body-2); line-height: 1.6; font-weight: 400; font-family: var(--font-sans); }
-.caption { font-size: var(--font-caption); line-height: 1.4; font-weight: 400; font-family: var(--font-sans); }
-.button { font-size: var(--font-button);  font-weight: 600; font-family: var(--font-sans); }
+.body-1 {
+  font-size: var(--font-body-1);
+  line-height: 1.7;
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+.body-2 {
+  font-size: var(--font-body-2);
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+.caption {
+  font-size: var(--font-caption);
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+.button {
+  font-size: var(--font-button);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
 
 /* =========================
    BACKGROUND UTILITIES
    ========================= */
-.bg-primary { background-color: var(--color-primary);}
-.dark .bg-primary { background-color: var(--color-bg); }
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.dark .bg-primary {
+  background-color: var(--color-bg);
+}
 
-.bg-primary-light { background-color: var(--color-primary-light); }
-.bg-primary-dark { background-color: var(--color-primary-dark); }
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
 
-.bg-secondary { background-color: var(--color-secondary); }
-.dark .bg-secondary { background-color: var(--color-secondary-dark); }
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.dark .bg-secondary {
+  background-color: var(--color-secondary-dark);
+}
 
-.bg-surface { background-color: var(--color-surface); }
-.dark .bg-surface { background-color: var(--color-surface); }
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.dark .bg-surface {
+  background-color: var(--color-surface);
+}
 
-.bg-gradient-orange { background: var(--gradient-orange-radial); }
+.bg-gradient-orange {
+  background: var(--gradient-orange-radial);
+}
 
 /* =========================
    TEXT UTILITIES
    ========================= */
-.text-primary { color: var(--color-primary); }
-.dark .text-primary { color: var(--color-primary-dark); }
+.text-primary {
+  color: var(--color-primary);
+}
+.dark .text-primary {
+  color: var(--color-primary-dark);
+}
 
-.text-secondary { color: var(--color-secondary); }
-.dark .text-secondary { color: var(--color-secondary-dark); }
+.text-secondary {
+  color: var(--color-secondary);
+}
+.dark .text-secondary {
+  color: var(--color-secondary-dark);
+}
 
-.text-muted { color: var(--color-muted); }
-.text-foreground { color: var(--color-text); }
+.text-muted {
+  color: var(--color-muted);
+}
+.text-foreground {
+  color: var(--color-text);
+}
 
 /* =========================
    SHADOW UTILITIES
    ========================= */
-.shadow-brand { box-shadow: var(--shadow-brand); }
+.shadow-brand {
+  box-shadow: var(--shadow-brand);
+}
 
 /* =========================
    BUTTON GRADIENT & ANIMATIONS
    ========================= */
 .btn-gradient {
   @apply text-white font-semibold py-2 px-6 rounded transition-all duration-300;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
 }
 .btn-gradient:hover {
-  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary-light));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-dark),
+    var(--color-primary-light)
+  );
 }
 
 /* ==========================
@@ -188,7 +249,7 @@ h6 {
 /* Border gradient for buttons */
 .border-gradient {
   position: relative;
-  background: 
+  background:
     linear-gradient(#000000, #000000) padding-box,
     var(--gradient-linear-primary) border-box;
   border: 1.5px solid transparent;
@@ -210,8 +271,12 @@ h6 {
 
 /* SCROLL LEFT ANIMATION */
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 .animate-scroll {
   animation: scroll 40s linear infinite;
@@ -219,13 +284,16 @@ h6 {
 
 /* SCROLL RIGHT ANIMATION */
 @keyframes scrollRight {
-  100% { transform: translateX(0); }
-  0% { transform: translateX(-50%); }
+  100% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(-50%);
+  }
 }
 .animate-scrollRight {
   animation: scrollRight 40s linear infinite;
 }
-
 
 /* Tailwind Directives */
 @tailwind base;
@@ -267,8 +335,6 @@ h6 {
   animation: spin-slow 25s linear infinite;
 }
 
-
-
 /* Vertical scrollbar for WebKit browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px; /* thickness of scrollbar */
@@ -280,7 +346,7 @@ h6 {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-primary); /* thumb color (your brand color) */
-  border-radius: 4px;         /* rounded corners */
+  border-radius: 4px; /* rounded corners */
   border: 2px solid #0e0d0d; /* optional padding effect */
 }
 
@@ -290,8 +356,8 @@ h6 {
 
 /* Firefox */
 * {
-  scrollbar-width: thin;               /* thinner scrollbar */
-  scrollbar-color: #f05323 #111111;   /* thumb color / track color */
+  scrollbar-width: thin; /* thinner scrollbar */
+  scrollbar-color: #f05323 #111111; /* thumb color / track color */
 }
 
 img {
@@ -302,12 +368,8 @@ img {
   background-color: var(--color-surface);
 }
 
-nav{
-  
+nav {
   font-family: 400;
   font-family: var(--font-sans);
   line-height: 100%;
-
 }
-
-
