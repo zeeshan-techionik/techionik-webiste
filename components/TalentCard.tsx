@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Button from "@/components/Button"; // Import your existing Button component
-
 type CardProps = {
   title: string;
   image: string;
@@ -35,13 +34,16 @@ const Card = ({ image, active, name, designation, stack }: CardProps) => {
 
       {/* Name and Designation */}
       <div className="text-center mb-6">
-        <h3 className="text-white text-3xl font-bold tracking-tight leading-tight">
-          {name?.split(" ")[0]}{" "}
+        <h3 className="text-primary-dark text-3xl font-bold tracking-tight leading-tight">
+          {name}
+          {/* {name?.split(" ")[0]}{" "}
           <span className="text-gray-400 font-semibold">
             {name?.split(" ")[1]}
-          </span>
+          </span> */}
         </h3>
-        <p className="text-[#FF6B35] text-lg font-medium mt-2">{designation}</p>
+        <p className="text-[var(--color-primary-dark)] text-lg font-medium mt-2">
+          {designation}
+        </p>
       </div>
 
       {/* Skill Stack Tags */}
@@ -49,7 +51,7 @@ const Card = ({ image, active, name, designation, stack }: CardProps) => {
         {stack?.map((tech, index) => (
           <div
             key={index}
-            className="flex items-center justify-center bg-[#1C1C1E] px-4 py-2 rounded-full text-xs font-medium text-gray-300 border border-white/5"
+            className="flex items-center justify-center bg-[#1C1C1E] px-4 py-2 rounded-full text-xs font-medium text-[var(--color-text)] border border-white/5"
           >
             {tech}
           </div>
@@ -63,7 +65,7 @@ const Card = ({ image, active, name, designation, stack }: CardProps) => {
           icon="/icons/arrow-right.svg"
           size="medium"
           radius="full"
-          variant="gradient"
+          variant="glass"
           className="px-6 inline-flex items-center gap-2"
         />
       </div>

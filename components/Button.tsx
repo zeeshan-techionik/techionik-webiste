@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
@@ -18,14 +17,15 @@ const radiusClasses = {
 const variantClasses = {
   gradient:
     "bg-gradient-to-r from-[#F05323] to-[#8A3014]  text-white hover:scale-105  transition-transform duration-300 px-6 py-2 rounded-4xl font-semibold",
-  glass: "bg-white/30 backdrop-blur-md border border-white/40 rounded-4xl  text-white font-semibold hover:bg-white/40   hover:scale-105 transition-transform duration-300",
+  glass:
+    "bg-white/30 backdrop-blur-md border border-white/40 rounded-4xl  text-white font-semibold hover:bg-white/40   hover:scale-105 transition-transform duration-300",
 };
 
 const iconRotateClasses = {
   0: "rotate-0",
   45: "rotate-[-45deg]",
   60: "rotate-[-60deg]",
-  90: "rotate-[-90deg]"
+  90: "rotate-[-90deg]",
 };
 interface ButtonProps {
   text?: string; // make it optional for some styles
@@ -35,9 +35,16 @@ interface ButtonProps {
   showIcon?: boolean;
   size?: "small" | "medium" | "large";
   radius?: "md" | "lg" | "full";
-  variant?: "gradient" | "glass";  // default variant is gradient
+  variant?: "gradient" | "glass"; // default variant is gradient
   className?: string;
-  iconRotate?: 0 | 45 | 60 | 90 | -45 | -60 | -90; /* use rotation for arrow forward icon */
+  iconRotate?:
+    | 0
+    | 45
+    | 60
+    | 90
+    | -45
+    | -60
+    | -90; /* use rotation for arrow forward icon */
   onClick?: () => void;
 }
 
@@ -53,7 +60,7 @@ const Button: React.FC<ButtonProps> = React.memo(
     radius = "full",
     variant = "gradient",
     className = "",
-    iconRotate = 0,   //default no rotation
+    iconRotate = 0, //default no rotation
     onClick,
   }) => {
     const buttonClasses = `
@@ -73,16 +80,16 @@ const Button: React.FC<ButtonProps> = React.memo(
           <span className="relative ">
             {/* Default Icon */}
             {/* Icon rotation added */}
-          <span>
-            <Image 
-              src={icon} 
-              alt="icon" 
-              width={42} 
-              height={34}
-              className={`transition-transform duration-300 ${iconRotateClasses[iconRotate ?? 0]}`} />
-          </span>
+            <span>
+              <Image
+                src={icon}
+                alt="icon"
+                width={42}
+                height={34}
+                className={`transition-transform duration-300 ${iconRotateClasses[iconRotate ?? 0]}`}
+              />
+            </span>
 
- 
             {hoverIcon && (
               <span className="hidden group-hover:block sm:p-20  ">
                 <Image src={hoverIcon} alt="hover icon" fill />
@@ -102,7 +109,7 @@ const Button: React.FC<ButtonProps> = React.memo(
         {content}
       </button>
     );
-  }
+  },
 );
 
 export default Button;

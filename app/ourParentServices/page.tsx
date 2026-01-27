@@ -7,7 +7,10 @@ import CTASection from "@/components/CTAComponent";
 import { servicesData } from "@/data/TechServices";
 import { ServiceHeroData } from "@/data/ServiceHeroData";
 import OurClientSays from "@/components/OurClientSays";
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 const OurParentServices = () => {
   return (
     <main className="overflow-x-hidden scroll-smooth">
@@ -30,7 +33,11 @@ const OurParentServices = () => {
       <section id="talent-pool">
         <TalentPool />
       </section>
+<<<<<<< HEAD
       <section id="ourclientsays">
+=======
+      <section id="ourclient-says">
+>>>>>>> main
         <OurClientSays />
       </section>
     </main>

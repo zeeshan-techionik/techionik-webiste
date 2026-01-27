@@ -6,7 +6,7 @@ const OutsourcingModels = () => {
   return (
     <section className="bg-black  py-24 px-4 sm:px-8 md:px-12 lg:px-20 overflow-hidden font-sans">
       {/* Header */}
-      <div className="max-w-8xl mx-auto mb-16">
+      <div className="max-w-7xl mx-auto mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="text-[var(--color-muted)]">
             {outsourcingModelsData.title}{" "}
@@ -22,7 +22,7 @@ const OutsourcingModels = () => {
       </div>
 
       {/* Grid */}
-      <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {outsourcingModelsData.slides.map((slide, index) => {
           const isOdd = index % 2 !== 0; // Column 2 (Right side)
           const isFirstRow = index < 2; // First two cards
@@ -30,7 +30,7 @@ const OutsourcingModels = () => {
           return (
             <div
               key={index}
-              className="group relative bg-surface rounded-3xl overflow-hidden w-600px min-h-[294px] flex flex-col justify-center border border-white/5 transition-all duration-500"
+              className="group relative bg-[var(--color-secondary-dark)] rounded-3xl overflow-hidden w-600px min-h-[294px] flex flex-col justify-center border border-white/5 transition-all duration-500"
             >
               {/* CORNER BORDER HOVER EFFECT (Top Right) */}
               <div className="absolute top-0 right-0 w-full h-full pointer-events-none z-30">
@@ -57,8 +57,8 @@ const OutsourcingModels = () => {
                       ? "-left-32 -bottom-24"
                       : "-right-32 -bottom-24" // Row 1: Bottom corners
                     : isOdd
-                    ? "-left-32 -top-24"
-                    : "-right-32 -top-24" // Row 2: Top corners
+                      ? "-left-32 -top-24"
+                      : "-right-32 -top-24" // Row 2: Top corners
                 }
               `}
               >
@@ -99,6 +99,7 @@ const OutsourcingModels = () => {
               </div>
 
               {/* TEXT CONTENT */}
+
               <h2
                 className={`relative z-10 w-full p-10 md:p-14 flex ${
                   isOdd ? "justify-end text-right" : "justify-start text-left"

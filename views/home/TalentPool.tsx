@@ -70,7 +70,6 @@ const TalentPool = () => {
           </div>
         </div>
 
-        {/* --- Bottom Navigation: Dots and Arrows --- */}
         {/* --- Bottom Navigation: Arrows Only --- */}
         <div className="flex justify-end mt-12">
           <div className="flex gap-4">
