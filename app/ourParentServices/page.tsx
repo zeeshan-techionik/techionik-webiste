@@ -6,6 +6,7 @@ import TalentPool from "@/views/home/TalentPool";
 import CTASection from "@/components/CTAComponent";
 import { servicesData } from "@/data/TechServices";
 import { ServiceHeroData } from "@/data/ServiceHeroData";
+import OurClientSays from "@/components/OurClientSays";
 
 const OurParentServices = () => {
   return (
@@ -28,6 +29,9 @@ const OurParentServices = () => {
       </section>
       <section id="talent-pool">
         <TalentPool />
+      </section>
+      <section id="ourclientsays">
+        <OurClientSays />
       </section>
     </main>
   );
